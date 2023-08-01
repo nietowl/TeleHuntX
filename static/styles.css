@@ -1,0 +1,192 @@
+/* Basic styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Styling for the search form */
+.form-container {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Styling for the search results container */
+.search-results {
+    margin-top: 30px;
+}
+
+.search-results h2 {
+    margin-bottom: 20px;
+}
+
+.message-list {
+    list-style: none;
+    padding: 0;
+}
+
+.message-list li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+/* Hover effect for search results */
+.message-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Grey background for search results in dark mode and normal mode */
+.message-list li {
+    background-color: #ccc;
+}
+
+/* Hover effect for search results in dark mode */
+body.dark-mode .message-list li:hover {
+    background-color: #000;
+}
+
+.message-list li div {
+    margin-bottom: 10px;
+}
+
+.message-list li div strong {
+    margin-right: 5px;
+}
+
+.message-list li div a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Pagination buttons */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Disabled state for pagination buttons */
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Styling for the current page indicator */
+.current-page {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Theme toggle button */
+.theme-toggle-button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.theme-toggle-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Dark mode styles for specific elements */
+.dark-mode .container {
+    background-color: #444;
+    color: #fff;
+    border-color: #666;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode styles for other elements */
+.dark-mode .search-results li {
+    background-color: #555;
+    border-color: #777;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode styles for pagination buttons */
+.dark-mode .pagination button {
+    background-color: #007bff;
+}
+
+/* Dark mode styles for the current page indicator */
+.dark-mode .current-page {
+    color: #007bff;
+}

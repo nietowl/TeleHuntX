@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Message Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add some basic styling to improve the appearance */
+        body {
+            /* transition: 0.2s ease-in-out; */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .search-results h2 {
+            margin-bottom: 10px;
+        }
+
+        .search-results ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .search-results li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-results li div {
+            margin-bottom: 5px;
+        }
+
+        .search-results li div strong {
+            margin-right: 5px;
+        }
+
+        .search-results li div a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Hover effect */
+        .search-results li:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        /* Basic styling for the entire page */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the current page indicator */
+        .current-page {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Theme toggle button */
+        .theme-toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 999;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .theme-toggle-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Dark mode styles for specific elements */
+        .dark-mode .container {
+            background-color: #444;
+            color: #fff;
+            border-color: #666;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa-Zk4u3h9SZfdow_7yYxnK2cNH1LvMOLgmg&usqp=CAU" alt="Logo" class="logo">
+    <!-- <h1 class="project-name">Telegram Hunter</h1> -->
+    <button id="themeToggleButton" class="theme-toggle-button">Toggle Theme</button>
+    <h1>Telegram Message Search</h1>
+    <!-- Search form -->
+    <form class="search-form" id="searchForm" method="POST" action="/search">
+        <input type="text" id="searchQuery" name="q" placeholder="Enter your search query" autofocus autocomplete="off">
+        <button type="submit" id="searchButton">Search</button>
+    </form>
+
+    <!-- Search results container -->
+    <div class="search-results">
+        <h2>Search Results:</h2>
+        <ul class="message-list" id="messageList"></ul>
+        <!-- Telegram widget container (initially hidden) -->
+        <div id="telegramWidgetContainer" style="display: none;"></div>
+    </div>
+
+    <!-- Pagination buttons -->
+    <div class="pagination">
+        <button id="prevPageButton" disabled>Previous Page</button>
+        <span id="currentPage">Page 1</span>
+        <button id="nextPageButton">Next Page</button>
+    </div>
+
+    <!-- Telegram widget container -->
+    <!-- <div id="telegramWidgetContainer" style="display: none;"></div> -->
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // JavaScript code goes here
+        // ...
+
+        // Function to embed Telegram widget for the output post
+        function embedTelegramWidget(postUrl) {
+            const telegramWidgetContainer = document.getElementById('telegramWidgetContainer');
+            const telegramScript = document.createElement('script');
+            telegramScript.src = `https://telegram.org/js/telegram-widget.js?22`;
+            telegramScript.setAttribute('data-telegram-post', postUrl);
+            telegramScript.setAttribute('data-width', '100%');
+            telegramWidgetContainer.appendChild(telegramScript);
+        }
+
+        // Call the function with the post URL to embed the Telegram widget for the output post
+        const postUrl = 'https://t.me/arvinclub1/572'; // Replace with the URL of the output post
+        embedTelegramWidget(postUrl);
+    </script>
+</body>
+</html>
