@@ -15,7 +15,7 @@ TeleHuntX is a powerful web application that allows you to search for messages o
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/<your-username>/TeleHuntX.git
+git clone https://github.com/nietowl/TeleHuntX.git
 ```
 
 2. Install the required Python dependencies:
