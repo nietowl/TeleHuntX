@@ -1,6 +1,6 @@
-# Telegram Hunter
+# TeleHuntX
 
-Telegram Hunter is a powerful web application that allows you to search for messages on Telegram with lightning speed and precision. Unleash the power of Telegram search and explore message details like never before!
+TeleHuntX is a powerful web application that allows you to search for messages on Telegram with lightning speed and precision. Unleash the power of Telegram search and explore message details like never before!
 
 ## Features
 
@@ -15,7 +15,7 @@ Telegram Hunter is a powerful web application that allows you to search for mess
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/<your-username>/telegram-hunter.git
+git clone https://github.com/<your-username>/TeleHuntX.git
 ```
 
 2. Install the required Python dependencies:
