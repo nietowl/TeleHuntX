@@ -134,7 +134,7 @@ async def search():
                 return jsonify({'error': 'Search query not provided'})
 
             # Get the Telegram API credentials from a JSON file
-            api_credentials_file = '/home/cipher/own_projects/lead_gen/telegram_hunter/credentials.json'
+            api_credentials_file = 'credentials.json'
             if not os.path.exists(api_credentials_file):
                 raise FileNotFoundError(f"API credentials file '{api_credentials_file}' not found.")
 
